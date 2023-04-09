@@ -212,8 +212,6 @@ window.addEventListener('DOMContentLoaded', () => {
 		})
 	})
 
-	let selectedCourseVisibilityChange = () => {}
-
 	// Image Gallery
 
 	// const onloadGalleryReset = () => {
