@@ -107,6 +107,10 @@ window.addEventListener('DOMContentLoaded', () => {
 		})
 	})
 
+	$('.offer-tabs').on('swipe', function (e) {
+		e.type === 'swipe' ? hideSingUp() : true
+	})
+
 	categoryBoxes.forEach(box => {
 		box.addEventListener('click', () => {
 			hideSingUp()
@@ -188,7 +192,7 @@ window.addEventListener('DOMContentLoaded', () => {
 			const buttonArrow = selectedButton.childNodes[1]
 			const selectedTab = e.target.closest('li')
 			const selectedCourse = selectedTab.firstElementChild.childNodes[3].innerText
-			
+
 			singUpCircle.classList.contains('submitted') ? correctFormStateDisplay() : true
 			selectedCourseSingUpPanelLabel.forEach(label => (label.innerText = selectedCourse))
 			selectedButton.classList.toggle('activated-singup-panel')
@@ -205,9 +209,10 @@ window.addEventListener('DOMContentLoaded', () => {
 				arrOfClickedButtons.push(selectedButton)
 			}
 			document.getElementById('singup').scrollIntoView({block: 'center'})
-
 		})
 	})
+
+	let selectedCourseVisibilityChange = () => {}
 
 	// Image Gallery
 
